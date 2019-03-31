@@ -37,6 +37,9 @@ class WordList extends Component {
                    ) :
                    word.type === 'pronoun' ? (
                      <span className="text-small text-gray">pro.</span>
+                   ) :
+                   word.type === 'measure' ? (
+                     <span className="text-small text-gray">measure</span>
                    ) : null}
                 </div>
               </div>
