@@ -57,45 +57,51 @@ class WordForm extends Component {
   render() {
     return (
       <form onSubmit={this.save}>
-        <div className="form-group">
+        <div className="form-group my-1">
           <label
             htmlFor="word-field"
+            className="mr-1"
           >Chinese word:</label>
           <input
             type="text"
             required
             id="word-field"
-            className="form-control m-1"
+            className="form-control"
             onChange={this.onValueChange}
             value={this.state.value}
+            placeholder="e.g., 书"
           />
         </div>
         <WordTypeSelect
           type={this.state.type}
           onChange={this.onTypeChange}
         />
-        <div className="form-group">
+        <div className="form-group my-1">
           <label
             htmlFor="pinyin-field"
+            className="mr-1"
           >Pinyin:</label>
           <input
             type="text"
             required
             id="pinyin-field"
-            className="m-1 form-control"
+            placeholder="e.g., shū"
+            className="form-control"
             onChange={this.onPinyinChange}
             value={this.state.pinyin}
           />
         </div>
-        <div className="form-group">
+        <div className="form-group my-1">
           <label
             htmlFor="translation-field"
+            className="mr-1"
           >English translation:</label>
           <input
             type="text"
             required
+            placeholder="e.g., book"
             id="translation-field"
-            className="m-1 form-control"
+            className="form-control"
             onChange={this.onTranslationChange}
             value={this.state.translation}
           />

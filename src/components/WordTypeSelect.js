@@ -13,10 +13,11 @@ class WordTypeSelect extends Component {
 
   render() {
     return (
-      <div className="form-group">
+      <div className="form-group my-1">
         <label
           htmlFor="type-field"
-        >Word type: </label>
+          className="mr-1"
+        >Word type:</label>
         <select
           id="type-field"
           onChange={this.onChange}
