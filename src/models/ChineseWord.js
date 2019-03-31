@@ -2,10 +2,25 @@ import Database from './Database';
 const wordsKey = 'words';
 
 class ChineseWord {
-  static findAll() {
+  static findAll(sort) {
     const wordMap = Database.get(wordsKey) || {};
     const wordData = Object.values(wordMap);
-    return wordData.map(data => new ChineseWord(data));
+
+    const words = wordData.map(data => new ChineseWord(data));
+    if (sort === 'date') {
+      return words;
+    }
+
+    return words.sort((a, b) => {
+      const aValue = a[sort];
+      const bValue = b[sort];
+
+      if (aValue < bValue) {
+        return -1
+      }
+
+      return aValue > bValue ? 1 : 0;
+    });
   }
 
   constructor(args) {
