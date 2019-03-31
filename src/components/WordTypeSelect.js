@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Box, Text } from '@primer/components';
 
 class WordTypeSelect extends Component {
   constructor(props) {
@@ -14,16 +13,15 @@ class WordTypeSelect extends Component {
 
   render() {
     return (
-      <Box mb={2}>
-        <Text
-          is="label"
-          fontSize={2}
+      <div className="form-group">
+        <label
           htmlFor="type-field"
-        >Word type:</Text>
+        >Word type: </label>
         <select
           id="type-field"
           onChange={this.onChange}
           value={this.state.type}
+          className="form-select"
         >
           <option value=""></option>
           <option value="noun">noun</option>
@@ -33,7 +31,7 @@ class WordTypeSelect extends Component {
           <option value="pronoun">pronoun</option>
           <option value="measure">measure</option>
         </select>
-      </Box>
+      </div>
     );
   }
 }

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { TextInput, Button, Link, Text } from '@primer/components';
 import ChineseWord from '../models/ChineseWord';
 import WordTypeSelect from './WordTypeSelect';
 
@@ -58,17 +57,15 @@ class WordForm extends Component {
   render() {
     return (
       <form onSubmit={this.save}>
-        <div>
-          <Text
-            is="label"
-            fontSize={2}
+        <div className="form-group">
+          <label
             htmlFor="word-field"
-          >Chinese word:</Text>
-          <TextInput
+          >Chinese word:</label>
+          <input
             type="text"
             required
             id="word-field"
-            m={1}
+            className="form-control m-1"
             onChange={this.onValueChange}
             value={this.state.value}
           />
@@ -77,39 +74,35 @@ class WordForm extends Component {
           type={this.state.type}
           onChange={this.onTypeChange}
         />
-        <div>
-          <Text
-            is="label"
-            fontSize={2}
+        <div className="form-group">
+          <label
             htmlFor="pinyin-field"
-          >Pinyin:</Text>
-          <TextInput
+          >Pinyin:</label>
+          <input
             type="text"
             required
             id="pinyin-field"
-            m={1}
+            className="m-1 form-control"
             onChange={this.onPinyinChange}
             value={this.state.pinyin}
           />
         </div>
-        <div>
-          <Text
-            is="label"
-            fontSize={2}
+        <div className="form-group">
+          <label
             htmlFor="translation-field"
-          >English translation:</Text>
-          <TextInput
+          >English translation:</label>
+          <input
             type="text"
             required
             id="translation-field"
-            m={1}
+            className="m-1 form-control"
             onChange={this.onTranslationChange}
             value={this.state.translation}
           />
         </div>
-        <Button type="submit">
+        <button className="btn" type="submit">
           Save
-        </Button>
+        </button>
       </form>
     )
   }
