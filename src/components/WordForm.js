@@ -104,7 +104,6 @@ class WordForm extends Component {
           >English translation:</label>
           <input
             type="text"
-            required
             placeholder="e.g., book"
             id="translation-field"
             className="form-control"

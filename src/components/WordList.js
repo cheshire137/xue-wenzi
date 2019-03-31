@@ -15,7 +15,12 @@ class WordList extends Component {
           {words.map(word => (
             <li key={word.value}>
               <div className="mb-2">
-                {word.value} &mdash; {word.translation}
+                {word.value}
+                {word.translation ? (
+                  <span>
+                    &mdash; {word.translation}
+                  </span>
+                ) : null}
                 <div>
                   <span className="Label mr-2 Label--gray">{word.pinyin}</span>
                   {word.type === 'noun' ? (
