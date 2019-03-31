@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Box, Label, Text } from '@primer/components';
 
 class WordList extends Component {
   render() {
@@ -9,24 +8,24 @@ class WordList extends Component {
       <ul>
         {words.map(word => (
           <li key={word.value}>
-            <Box mb={2}>
+            <div className="mb-2">
               {word.value} &mdash; {word.translation}
               <div>
-                <Label outline mr={2}>{word.pinyin}</Label>
+                <span className="Label mr-2 Label--gray">{word.pinyin}</span>
                 {word.type === 'noun' ? (
-                   <Text fontSize={1} color="gray.6">n.</Text>
+                   <span className="text-small text-gray">n.</span>
                  ) :
                  word.type === 'verb' ? (
-                   <Text fontSize={1} color="gray.6">v.</Text>
+                   <span className="text-small text-gray">v.</span>
                  ) :
                  word.type === 'adjective' ? (
-                   <Text fontSize={1} color="gray.6">adj.</Text>
+                   <span className="text-small text-gray">adj.</span>
                  ) :
                  word.type === 'adverb' ? (
-                   <Text fontSize={1} color="gray.6">adv.</Text>
+                   <span className="text-small text-gray">adv.</span>
                  ) : null}
               </div>
-            </Box>
+            </div>
           </li>
         ))}
       </ul>

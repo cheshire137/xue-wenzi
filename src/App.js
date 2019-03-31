@@ -3,7 +3,6 @@ import './App.css';
 import WordList from './components/WordList';
 import ChineseWord from './models/ChineseWord';
 import WordForm from './components/WordForm';
-import { Box } from '@primer/components';
 
 class App extends Component {
   constructor(props) {
@@ -24,10 +23,10 @@ class App extends Component {
     const { words } = this.state
 
     return (
-      <Box p={3}>
+      <div className="p-3">
         <WordList words={words} />
         <WordForm onSave={this.refreshWords} />
-      </Box>
+      </div>
     );
   }
 }
