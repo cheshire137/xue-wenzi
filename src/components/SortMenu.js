@@ -10,7 +10,7 @@ class SortMenu extends Component {
     const { sort } = this.props
 
     return (
-      <div>
+      <div className="form-group mt-0">
         <label
           htmlFor="sort-menu"
           className="mr-1"

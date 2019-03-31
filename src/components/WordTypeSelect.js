@@ -8,7 +8,7 @@ class WordTypeSelect extends Component {
 
   render() {
     return (
-      <div className="form-group my-1">
+      <div className="form-group">
         <label
           htmlFor="type-field"
           className="mr-1"
@@ -19,7 +19,7 @@ class WordTypeSelect extends Component {
           value={this.props.type}
           className="form-select"
         >
-          <option value=""></option>
+          <option>Choose a type</option>
           <option value="noun">noun</option>
           <option value="verb">verb</option>
           <option value="adjective">adjective</option>

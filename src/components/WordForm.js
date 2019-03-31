@@ -63,7 +63,7 @@ class WordForm extends Component {
   render() {
     return (
       <form onSubmit={this.save}>
-        <div className="form-group my-1">
+        <div className="form-group mt-0">
           <label
             htmlFor="word-field"
             className="mr-1"
@@ -82,7 +82,7 @@ class WordForm extends Component {
           type={this.state.type}
           onChange={this.onTypeChange}
         />
-        <div className="form-group my-1">
+        <div className="form-group">
           <label
             htmlFor="pinyin-field"
             className="mr-1"
@@ -97,7 +97,7 @@ class WordForm extends Component {
             value={this.state.pinyin}
           />
         </div>
-        <div className="form-group my-1">
+        <div className="form-group">
           <label
             htmlFor="translation-field"
             className="mr-1"
