@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 
 class WordTypeSelect extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { type: props.type };
-  }
-
   onChange = event => {
     const type = event.target.value;
     this.props.onChange(type);
@@ -21,7 +16,7 @@ class WordTypeSelect extends Component {
         <select
           id="type-field"
           onChange={this.onChange}
-          value={this.state.type}
+          value={this.props.type}
           className="form-select"
         >
           <option value=""></option>
