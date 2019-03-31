@@ -10,14 +10,14 @@ class SortMenu extends Component {
     const { sort } = this.props
 
     return (
-      <div className="form-group mt-0">
+      <div>
         <label
           htmlFor="sort-menu"
-          className="mr-1"
+          className="mr-1 f6"
         >Sort:</label>
         <select
           id="sort-menu"
-          className="form-select"
+          className="form-select input-sm"
           value={sort}
           onChange={this.onChange}
         >

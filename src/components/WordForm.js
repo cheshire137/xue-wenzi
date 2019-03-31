@@ -62,7 +62,10 @@ class WordForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.save}>
+      <form
+        onSubmit={this.save}
+        className="ml-6"
+      >
         <div className="form-group mt-0">
           <label
             htmlFor="word-field"

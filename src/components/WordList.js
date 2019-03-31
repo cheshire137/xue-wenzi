@@ -7,10 +7,15 @@ class WordList extends Component {
 
     return (
       <div>
-        <SortMenu
-          sort={sort}
-          onChange={onSortChange}
-        />
+        <div className="border-bottom pb-2 d-flex flex-items-center flex-justify-between mb-2">
+          <h2
+            className="text-normal f3"
+          >{words.length} word{words.length === 1 ? null : 's'}</h2>
+          <SortMenu
+            sort={sort}
+            onChange={onSortChange}
+          />
+        </div>
         <ul>
           {words.map(word => (
             <li key={word.value}>

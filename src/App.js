@@ -42,7 +42,7 @@ class App extends Component {
                 onSortChange={this.onSortChange}
               />
             </div>
-            <div className="col-6 float-left">
+            <div className="col-4 float-left">
               <WordForm onSave={this.refreshWords} />
             </div>
           </div>
