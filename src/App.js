@@ -5,6 +5,7 @@ import ChineseWord from './models/ChineseWord';
 import WordForm from './components/WordForm';
 import WordTypeFilter from './components/WordTypeFilter';
 import ExportButton from './components/ExportButton';
+import ImportButton from './components/ImportButton';
 
 function getWordTypesAndCounts(words) {
   const typesAndCounts = {};
@@ -30,7 +31,8 @@ class App extends Component {
       editingTranslation: '',
       editingType: '',
       editingPinyin: '',
-      wordTypeFilter: 'all'
+      wordTypeFilter: 'all',
+      notice: ''
     };
   }
 
@@ -84,9 +86,18 @@ class App extends Component {
     }));
   };
 
+  importedWords = newWords => {
+    if (newWords.length < 1) {
+      return;
+    }
+    const notice = `Imported: ${newWords.join(', ')}`;
+    this.setState(prevState => ({ notice }));
+  };
+
   render() {
     const { words, sort, editingPinyin, editingType, visibleWords,
-            editingTranslation, editingValue, wordTypeFilter } = this.state;
+            editingTranslation, editingValue, wordTypeFilter,
+            notice } = this.state;
     const wordTypesAndCounts = getWordTypesAndCounts(words);
 
     return (
@@ -96,8 +107,17 @@ class App extends Component {
             <h1
               className="pt-4 app-title"
             >学文字</h1>
+            {notice.length > 0 ? (
+              <h2>{notice}</h2>
+            ) : null}
             {words.length > 0 ? (
-              <ExportButton words={words} />
+              <div>
+                <ExportButton words={words} />
+                <ImportButton
+                  knownWordValues={words.map(word => word.value)}
+                  onImportComplete={this.importedWords}
+                />
+              </div>
             ) : null}
           </div>
         </header>

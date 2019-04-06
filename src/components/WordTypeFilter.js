@@ -9,8 +9,8 @@ class WordTypeFilter extends Component {
   render() {
     const { wordTypesAndCounts, activeFilter } = this.props;
     const wordTypes = Object.keys(wordTypesAndCounts);
-    const totalWords = Object.values(wordTypesAndCounts).
-      reduce((total, num) => total + num)
+    const totalWords = Object.values(wordTypesAndCounts)
+                             .reduce((total, num) => total + num);
 
     return (
       <div>
