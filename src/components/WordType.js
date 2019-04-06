@@ -4,26 +4,29 @@ class WordType extends Component {
   render() {
     const { type } = this.props;
 
+    if (typeof type !== 'string' || type.trim().length < 1) {
+      return null;
+    }
+
     return (
-      <span>
+      <span className="f4 text-gray">
         {type === 'noun' ? (
-           <span className="text-small text-gray">n.</span>
+           <span>n.</span>
          ) :
          type === 'verb' ? (
-           <span className="text-small text-gray">v.</span>
+           <span>v.</span>
          ) :
          type === 'adjective' ? (
-           <span className="text-small text-gray">adj.</span>
+           <span>adj.</span>
          ) :
          type === 'adverb' ? (
-           <span className="text-small text-gray">adv.</span>
+           <span>adv.</span>
          ) :
          type === 'pronoun' ? (
-           <span className="text-small text-gray">pro.</span>
-         ) :
-         typeof type === 'string' && type.trim().length > 0 ? (
-           <span className="text-small text-gray">{type}</span>
-         ) : null}
+           <span>pro.</span>
+         ) : (
+           <span>{type}</span>
+         )}
       </span>
     );
   }

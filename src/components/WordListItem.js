@@ -6,26 +6,24 @@ class WordListItem extends Component {
     const { value, translation, type, pinyin, editWord } = this.props;
 
     return (
-      <li>
-        <div className="mb-2 d-flex flex-items-start">
+      <li className="mb-2 d-flex f3 flex-items-start">
+        <div>
+          {value}
+          {translation ? (
+            <span>
+              &mdash; {translation}
+            </span>
+          ) : null}
           <div>
-            {value}
-            {translation ? (
-              <span>
-                &mdash; {translation}
-              </span>
-            ) : null}
-            <div>
-              <span className="Label mr-2 Label--gray">{pinyin}</span>
-              <WordType type={type} />
-            </div>
+            <span className="Label mr-2 f4 Label--gray">{pinyin}</span>
+            <WordType type={type} />
           </div>
-          <button
-            type="button"
-            onClick={editWord}
-            className="btn-link ml-4 mt-1 text-small"
-          >Edit</button>
         </div>
+        <button
+          type="button"
+          onClick={editWord}
+          className="btn-link ml-4 mt-2 text-small"
+        >Edit</button>
       </li>
     );
   }
