@@ -29,8 +29,9 @@ class WordTypeSelect extends Component {
             <option value="measure">measure</option>
           </optgroup>
           <optgroup label="Phrases">
-            <option value="phrase">phrase</option>
+            <option value="greeting">greeting</option>
             <option value="idiom">idiom</option>
+            <option value="phrase">phrase</option>
           </optgroup>
         </select>
       </div>
