@@ -55,9 +55,9 @@ class App extends Component {
 
     return (
       <div>
-        <header>
+        <header className="app-header">
           <div className="container-lg">
-            <h1 className="my-4">学文字</h1>
+            <h1 className="pt-4 pb-2 mb-2">学文字</h1>
           </div>
         </header>
         <div className="container-lg">

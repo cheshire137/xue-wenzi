@@ -1,0 +1,22 @@
+.app-header {
+  background-color: #95EB00;
+  color: #fff950;
+}
+
+.btn-link,
+a,
+a:link {
+  color: #FF8A01;
+}
+
+a:visited {
+  color: #FF9A08;
+}
+
+a:hover,
+a:focus,
+a:active,
+.btn-link:hover,
+.btn-link:focus {
+  color: #6AE83f;
+}
