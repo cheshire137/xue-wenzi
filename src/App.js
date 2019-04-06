@@ -18,6 +18,27 @@ function getWordTypesAndCounts(words) {
   return typesAndCounts;
 }
 
+function encodeString(str) {
+  const out = [];
+  for (let i = 0; i < str.length; i++) {
+    out[i] = str.charCodeAt(i);
+  }
+  return new Uint8Array(out);
+}
+
+function getDateString(date) {
+  const year = date.getFullYear();
+  let month = date.getMonth() + 1;
+  if (month < 10) {
+    month = `0${month}`;
+  }
+  let day = date.getDate();
+  if (day < 10) {
+    day = `0${day}`;
+  }
+  return `${year}-${month}-${day}`;
+}
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -83,6 +104,20 @@ class App extends Component {
     }));
   };
 
+  exportWords = () => {
+    const { words } = this.state;
+    const data = encodeString(JSON.stringify(words));
+    const blob = new Blob([data], { type: 'application/octet-stream' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    const dateStr = getDateString(new Date());
+    link.setAttribute('href', url);
+    link.setAttribute('download', `chinese-vocabulary-${dateStr}.json`);
+    const event = document.createEvent('MouseEvents');
+    event.initMouseEvent('click', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 0, null);
+    link.dispatchEvent(event);
+  };
+
   render() {
     const { words, sort, editingPinyin, editingType, visibleWords,
             editingTranslation, editingValue, wordTypeFilter } = this.state;
@@ -91,10 +126,17 @@ class App extends Component {
     return (
       <div className="app-wrapper">
         <header className="app-header mb-3">
-          <div className="container-lg">
+          <div className="container-lg pb-2 d-flex flex-items-end flex-justify-between">
             <h1
-              className="pt-4 pb-2 app-title"
+              className="pt-4 app-title"
             >学文字</h1>
+            {words.length > 0 ? (
+              <button
+                type="button"
+                onClick={this.exportWords}
+                className="btn-link header-link"
+              >Export</button>
+            ) : null}
           </div>
         </header>
         <main className="container-lg width-full clearfix">

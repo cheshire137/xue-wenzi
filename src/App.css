@@ -11,6 +11,22 @@
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
 }
 
+.header-link,
+.header-link:link,
+.header-link.btn-link,
+.header-link.btn-link:link {
+  color: #fff;
+  font-weight: bold;
+}
+
+.header-link:hover,
+.header-link.btn-link:hover,
+.header-link:focus,
+.header-link.btn-link:focus {
+  color: #fff;
+  text-decoration: underline;
+}
+
 .btn-link,
 a,
 a:link {
