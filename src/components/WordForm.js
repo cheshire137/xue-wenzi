@@ -70,7 +70,7 @@ class WordForm extends Component {
         className="ml-6"
       >
         <h2
-          className="text-normal border-bottom pb-2 mb-2"
+          className="text-normal f3 border-bottom pb-2 mb-2"
         >Add a word or phrase</h2>
         <div className="form-group mt-0">
           <label
