@@ -92,7 +92,9 @@ class App extends Component {
       <div className="app-wrapper">
         <header className="app-header mb-3">
           <div className="container-lg">
-            <h1 className="pt-4 pb-2">学文字</h1>
+            <h1
+              className="pt-4 pb-2 app-title"
+            >学文字</h1>
           </div>
         </header>
         <main className="container-lg">
