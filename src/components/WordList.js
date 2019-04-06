@@ -18,8 +18,10 @@ class WordList extends Component {
           >
             {totalWords < 1 ? (
               <span>0 words or phrases</span>
+            ) : totalWords === 1 ? (
+              <span>1 word or phrase</span>
             ) : (
-              <span>{totalWords} word{totalWords === 1 ? null : 's'} and phrase{totalWords === 1 ? null : 's'}</span>
+              <span>{totalWords} words and phrases</span>
             )}
           </h2>
           {totalWords > 0 ? (

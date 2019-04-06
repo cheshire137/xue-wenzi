@@ -1,0 +1,9 @@
+.filter-item.selected {
+  background-color: #FFF115;
+  color: #000;
+}
+
+.btn-link.filter-item:hover,
+.btn-link.filter-item:focus {
+  color: #000;
+}
