@@ -8,7 +8,7 @@ class ChineseWord {
 
     const words = wordData.map(data => new ChineseWord(data));
     if (sort === 'date') {
-      return words;
+      return words.reverse();
     }
 
     return words.sort((a, b) => {
