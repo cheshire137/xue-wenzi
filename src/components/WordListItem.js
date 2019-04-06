@@ -10,9 +10,9 @@ class WordListItem extends Component {
             deleteWord } = this.props;
 
     return (
-      <li className="word-list-item mb-2 d-flex f3 flex-items-start">
+      <li className="word-list-item mb-3 d-flex f3 flex-items-start">
         <div>
-          <div className="d-flex flex-items-center">
+          <div className="d-flex flex-items-center lh-condensed">
             {value}
             <SpeakButton
               value={value}
@@ -23,23 +23,26 @@ class WordListItem extends Component {
                 className="d-inline-block ml-2"
               >{translation}</span>
             ) : null}
+            <WordType
+              type={type}
+              className="ml-2 text-gray f5"
+            />
           </div>
           <div>
-            <span className="Label mr-2 f4 Label--gray">{pinyin}</span>
-            <WordType type={type} />
+            <span className="Label f5 Label--gray">{pinyin}</span>
+            <div className="f6 show-on-hover ml-3">
+              <button
+                type="button"
+                onClick={editWord}
+                className="btn-link link-gray-dark"
+              ><FontAwesomeIcon icon="pen" /></button>
+              <button
+                type="button"
+                onClick={deleteWord}
+                className="btn-link link-gray-dark ml-3"
+              ><FontAwesomeIcon icon="trash" /></button>
+            </div>
           </div>
-        </div>
-        <div className="f6 show-on-hover ml-3 mt-2">
-          <button
-            type="button"
-            onClick={editWord}
-            className="btn-link"
-          ><FontAwesomeIcon icon="pen" /></button>
-          <button
-            type="button"
-            onClick={deleteWord}
-            className="btn-link ml-3"
-          ><FontAwesomeIcon icon="trash" /></button>
         </div>
       </li>
     );

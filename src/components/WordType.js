@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 
 class WordType extends Component {
   render() {
-    const { type } = this.props;
+    const { type, className } = this.props;
 
     if (typeof type !== 'string' || type.trim().length < 1) {
       return null;
     }
 
     return (
-      <span className="f4 text-gray">
+      <span className={className}>
         {type === 'noun' ? (
            <span>n.</span>
          ) :
