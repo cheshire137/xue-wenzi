@@ -70,6 +70,10 @@ class WordForm extends Component {
   }
 
   render() {
+    const existingValue = this.props.value;
+    const showValueField = existingValue.length < 1;
+    const { value, type, pinyin, translation } = this.state;
+
     return (
       <form
         onSubmit={this.save}
@@ -83,18 +87,22 @@ class WordForm extends Component {
             htmlFor="word-field"
             className="mb-1 d-block no-wrap"
           >Chinese word or phrase:</label>
-          <input
-            type="text"
-            required
-            id="word-field"
-            className="form-control"
-            onChange={this.onValueChange}
-            value={this.state.value}
-            placeholder="e.g., 书"
-          />
+          {showValueField ? (
+            <input
+              type="text"
+              required
+              id="word-field"
+              className="form-control"
+              onChange={this.onValueChange}
+              value={value}
+              placeholder="e.g., 书"
+            />
+          ) : (
+            <span>{value}</span>
+          )}
         </div>
         <WordTypeSelect
-          type={this.state.type}
+          type={type}
           onChange={this.onTypeChange}
         />
         <div className="form-group">
@@ -109,7 +117,7 @@ class WordForm extends Component {
             placeholder="e.g., shū"
             className="form-control"
             onChange={this.onPinyinChange}
-            value={this.state.pinyin}
+            value={pinyin}
           />
         </div>
         <div className="form-group">
@@ -123,7 +131,7 @@ class WordForm extends Component {
             id="translation-field"
             className="form-control"
             onChange={this.onTranslationChange}
-            value={this.state.translation}
+            value={translation}
           />
         </div>
         <button className="btn" type="submit">
