@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class WordType extends Component {
   render() {
-    const { type } = this.props
+    const { type } = this.props;
 
     return (
       <span>
@@ -25,7 +25,7 @@ class WordType extends Component {
            <span className="text-small text-gray">{type}</span>
          ) : null}
       </span>
-    )
+    );
   }
 }
 

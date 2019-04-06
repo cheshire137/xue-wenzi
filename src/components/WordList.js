@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SortMenu from './SortMenu';
-import WordType from './WordType';
+import WordListItem from './WordListItem';
 
 class WordList extends Component {
   render() {
@@ -28,20 +28,7 @@ class WordList extends Component {
         {words.length > 0 ? (
           <ul>
             {words.map(word => (
-              <li key={word.value}>
-                <div className="mb-2">
-                  {word.value}
-                  {word.translation ? (
-                    <span>
-                      &mdash; {word.translation}
-                    </span>
-                  ) : null}
-                  <div>
-                    <span className="Label mr-2 Label--gray">{word.pinyin}</span>
-                    <WordType type={word.type} />
-                  </div>
-                </div>
-              </li>
+              <WordListItem {...word} key={word.value} />
             ))}
           </ul>
         ) : (
