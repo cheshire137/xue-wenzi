@@ -5,6 +5,10 @@ import WordListItem from './WordListItem';
 class WordList extends Component {
   render() {
     const { words, onSortChange, sort } = this.props
+    const totalWords = words.length;
+    const midIndex = Math.ceil(totalWords / 2);
+    const leftWords = words.slice(0, midIndex);
+    const rightWords = words.slice(midIndex, totalWords);
 
     return (
       <div>
@@ -12,13 +16,13 @@ class WordList extends Component {
           <h2
             className="text-normal f3"
           >
-            {words.length < 1 ? (
+            {totalWords < 1 ? (
               <span>0 words or phrases</span>
             ) : (
-              <span>{words.length} word{words.length === 1 ? null : 's'} and phrase{words.length === 1 ? null : 's'}</span>
+              <span>{totalWords} word{totalWords === 1 ? null : 's'} and phrase{totalWords === 1 ? null : 's'}</span>
             )}
           </h2>
-          {words.length > 0 ? (
+          {totalWords > 0 ? (
             <SortMenu
               sort={sort}
               onChange={onSortChange}
@@ -26,15 +30,32 @@ class WordList extends Component {
           ) : null}
         </div>
         {words.length > 0 ? (
-          <ul>
-            {words.map(word => (
-              <WordListItem
-                {...word}
-                key={word.value}
-                editWord={() => this.props.editWord(word)}
-              />
-            ))}
-          </ul>
+          <div className="clearfix">
+            <div className="col-6 float-left">
+              <ul>
+                {leftWords.map(word => (
+                  <WordListItem
+                    {...word}
+                    key={word.value}
+                    editWord={() => this.props.editWord(word)}
+                  />
+                ))}
+              </ul>
+            </div>
+            {rightWords.length > 0 ? (
+              <div className="col-6 float-left">
+                <ul>
+                  {rightWords.map(word => (
+                    <WordListItem
+                      {...word}
+                      key={word.value}
+                      editWord={() => this.props.editWord(word)}
+                    />
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+          </div>
         ) : (
           <p>You haven't added any learned words or phrases yet.</p>
         )}

@@ -56,13 +56,13 @@ class App extends Component {
     return (
       <div>
         <header>
-          <div className="container">
+          <div className="container-lg">
             <h1 className="my-4">学文字</h1>
           </div>
         </header>
-        <div className="container">
+        <div className="container-lg">
           <div className="clearfix">
-            <div className="col-6 float-left">
+            <div className="col-7 float-left">
               <WordList
                 words={words}
                 sort={sort}
