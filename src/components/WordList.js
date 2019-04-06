@@ -10,7 +10,13 @@ class WordList extends Component {
         <div className="border-bottom pb-2 d-flex flex-items-center flex-justify-between mb-2">
           <h2
             className="text-normal f3"
-          >{words.length} word{words.length === 1 ? null : 's'}</h2>
+          >
+            {words.length < 1 ? (
+              <span>0 words or phrases</span>
+            ) : (
+              <span>{words.length} word{words.length === 1 ? null : 's'} and phrase{words.length === 1 ? null : 's'}</span>
+            )}
+          </h2>
           <SortMenu
             sort={sort}
             onChange={onSortChange}
