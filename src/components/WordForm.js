@@ -46,6 +46,12 @@ class WordForm extends Component {
     word.save();
 
     this.props.onSave();
+    this.setState(prevState => ({
+      value: '',
+      pinyin: '',
+      type: '',
+      translation: ''
+    }))
   }
 
   componentDidUpdate(prevProps) {
