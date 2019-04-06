@@ -3,6 +3,10 @@
   color: #fff950;
 }
 
+.app-footer {
+  background-color: #eee;
+}
+
 .btn-link,
 a,
 a:link {
@@ -19,4 +23,9 @@ a:active,
 .btn-link:hover,
 .btn-link:focus {
   color: #6AE83f;
+}
+
+.link-gray:hover,
+.link-gray:focus {
+  color: #FF8A01 !important;
 }

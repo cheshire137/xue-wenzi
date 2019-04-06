@@ -92,7 +92,7 @@ class App extends Component {
       <div>
         <header className="app-header">
           <div className="container-lg">
-            <h1 className="pt-4 pb-2 mb-2">学文字</h1>
+            <h1 className="pt-4 pb-2 mb-3">学文字</h1>
           </div>
         </header>
         <div className="container-lg">
@@ -128,6 +128,16 @@ class App extends Component {
             </div>
           </div>
         </div>
+        <footer className="app-footer mt-4">
+          <div className="container py-4 f6">
+            <a
+              className="link-gray"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/cheshire137/xue-wenzi"
+            >View source</a>
+          </div>
+        </footer>
       </div>
     );
   }
