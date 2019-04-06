@@ -1,0 +1,7 @@
+.edit-word-button {
+  display: none;
+}
+
+.word-list-item:hover .edit-word-button {
+  display: inline-block;
+}

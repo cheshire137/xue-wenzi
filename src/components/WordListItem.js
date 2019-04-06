@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import WordType from './WordType';
+import './WordListItem.css';
 
 class WordListItem extends Component {
   render() {
     const { value, translation, type, pinyin, editWord } = this.props;
 
     return (
-      <li className="mb-2 d-flex f3 flex-items-start">
+      <li className="word-list-item mb-2 d-flex f3 flex-items-start">
         <div>
           {value}
           {translation ? (
@@ -22,7 +23,7 @@ class WordListItem extends Component {
         <button
           type="button"
           onClick={editWord}
-          className="btn-link ml-4 mt-2 text-small"
+          className="btn-link edit-word-button ml-4 mt-2 text-small"
         >Edit</button>
       </li>
     );
