@@ -110,6 +110,7 @@ class App extends Component {
             </div>
             <div className="col-5 float-left">
               <WordList
+                wordTypeFilter={wordTypeFilter}
                 words={visibleWords}
                 sort={sort}
                 onSortChange={this.onSortChange}

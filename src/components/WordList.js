@@ -2,28 +2,38 @@ import React, { Component } from 'react';
 import SortMenu from './SortMenu';
 import WordListItem from './WordListItem';
 
+function getUnitsFor(count, type) {
+  if (type === 'all') {
+    if (count === 1) {
+      return 'word or phrase';
+    }
+    const conjunction = count < 1 ? 'or' : 'and';
+    return `words ${conjunction} phrases`;
+  }
+
+  let displayType = type;
+  if (type === 'measure') {
+    displayType = 'measure word';
+  }
+
+  return `${displayType}${count === 1 ? '' : 's'}`;
+}
+
 class WordList extends Component {
   render() {
-    const { words, onSortChange, sort } = this.props
+    const { words, onSortChange, sort, wordTypeFilter } = this.props
     const totalWords = words.length;
     const midIndex = Math.ceil(totalWords / 2);
     const leftWords = words.slice(0, midIndex);
     const rightWords = words.slice(midIndex, totalWords);
+    const units = getUnitsFor(totalWords, wordTypeFilter);
 
     return (
       <div>
         <div className="border-bottom pb-2 d-flex flex-items-center flex-justify-between mb-2">
           <h2
             className="text-normal f3"
-          >
-            {totalWords < 1 ? (
-              <span>0 words or phrases</span>
-            ) : totalWords === 1 ? (
-              <span>1 word or phrase</span>
-            ) : (
-              <span>{totalWords} words and phrases</span>
-            )}
-          </h2>
+          >{totalWords} {units}</h2>
           {totalWords > 0 ? (
             <SortMenu
               sort={sort}
