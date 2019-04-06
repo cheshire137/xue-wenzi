@@ -18,14 +18,6 @@ function getWordTypesAndCounts(words) {
   return typesAndCounts;
 }
 
-function encodeString(str) {
-  const out = [];
-  for (let i = 0; i < str.length; i++) {
-    out[i] = str.charCodeAt(i);
-  }
-  return new Uint8Array(out);
-}
-
 function getDateString(date) {
   const year = date.getFullYear();
   let month = date.getMonth() + 1;
@@ -106,7 +98,7 @@ class App extends Component {
 
   exportWords = () => {
     const { words } = this.state;
-    const data = encodeString(JSON.stringify(words));
+    const data = JSON.stringify(words);
     const blob = new Blob([data], { type: 'application/octet-stream' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
