@@ -66,11 +66,14 @@ class WordForm extends Component {
         onSubmit={this.save}
         className="ml-6"
       >
+        <h2
+          className="text-normal border-bottom pb-2 mb-2"
+        >Add a word or phrase</h2>
         <div className="form-group mt-0">
           <label
             htmlFor="word-field"
             className="mr-1"
-          >Chinese word:</label>
+          >Chinese word or phrase:</label>
           <input
             type="text"
             required
@@ -80,6 +83,9 @@ class WordForm extends Component {
             value={this.state.value}
             placeholder="e.g., 书"
           />
+          <p className="note">
+            What Chinese word or phrase did you learn?
+          </p>
         </div>
         <WordTypeSelect
           type={this.state.type}
@@ -99,6 +105,9 @@ class WordForm extends Component {
             onChange={this.onPinyinChange}
             value={this.state.pinyin}
           />
+          <p className="note">
+            How do you pronounce the word or phrase?
+          </p>
         </div>
         <div className="form-group">
           <label
@@ -113,6 +122,9 @@ class WordForm extends Component {
             onChange={this.onTranslationChange}
             value={this.state.translation}
           />
+          <p className="note">
+            What does the word or phrase mean in English?
+          </p>
         </div>
         <button className="btn" type="submit">
           Save
