@@ -17,10 +17,12 @@ class WordList extends Component {
               <span>{words.length} word{words.length === 1 ? null : 's'} and phrase{words.length === 1 ? null : 's'}</span>
             )}
           </h2>
-          <SortMenu
-            sort={sort}
-            onChange={onSortChange}
-          />
+          {words.length > 0 ? (
+            <SortMenu
+              sort={sort}
+              onChange={onSortChange}
+            />
+          ) : null}
         </div>
         {words.length > 0 ? (
           <ul>
