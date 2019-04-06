@@ -50,6 +50,7 @@ class WordList extends Component {
                     {...word}
                     key={word.value}
                     editWord={() => this.props.editWord(word)}
+                    deleteWord={() => this.props.deleteWord(word)}
                   />
                 ))}
               </ul>
@@ -62,6 +63,7 @@ class WordList extends Component {
                       {...word}
                       key={word.value}
                       editWord={() => this.props.editWord(word)}
+                      deleteWord={() => this.props.deleteWord(word)}
                     />
                   ))}
                 </ul>

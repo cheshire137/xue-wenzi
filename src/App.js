@@ -69,6 +69,11 @@ class App extends Component {
     }));
   };
 
+  deleteWord = word => {
+    word.delete();
+    this.refreshWords();
+  };
+
   onWordSave = () => {
     this.refreshWords();
     this.setState(prevState => ({
@@ -86,12 +91,21 @@ class App extends Component {
     }));
   };
 
+  flashNotice = notice => {
+    this.setState(prevState => ({ notice }), () => {
+      window.setTimeout(() => {
+        this.setState(prevState => ({ notice: '' }));
+      }, 3000);
+    });
+  };
+
   importedWords = newWords => {
     if (newWords.length < 1) {
       return;
     }
-    const notice = `Imported: ${newWords.join(', ')}`;
-    this.setState(prevState => ({ notice }));
+    this.refreshWords();
+    const wordValues = newWords.map(word => word.value).join(', ');
+    this.flashNotice(`Imported: ${wordValues}`);
   };
 
   render() {
@@ -138,6 +152,7 @@ class App extends Component {
               sort={sort}
               onSortChange={this.onSortChange}
               editWord={this.editWord}
+              deleteWord={this.deleteWord}
             />
           </div>
           <div className="col-3 float-left">

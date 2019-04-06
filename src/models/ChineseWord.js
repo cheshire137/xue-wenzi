@@ -30,6 +30,12 @@ class ChineseWord {
     this.type = args.type;
   }
 
+  delete() {
+    const wordMap = Database.get(wordsKey) || {};
+    delete wordMap[this.value];
+    Database.set(wordsKey, wordMap);
+  }
+
   save() {
     const wordMap = Database.get(wordsKey) || {};
     wordMap[this.value] = {

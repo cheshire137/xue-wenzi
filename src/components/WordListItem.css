@@ -1,7 +1,9 @@
-.edit-word-button {
+.edit-word-button,
+.delete-word-button {
   display: none;
 }
 
-.word-list-item:hover .edit-word-button {
+.word-list-item:hover .edit-word-button,
+.word-list-item:hover .delete-word-button {
   display: inline-block;
 }

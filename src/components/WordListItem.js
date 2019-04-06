@@ -4,7 +4,8 @@ import './WordListItem.css';
 
 class WordListItem extends Component {
   render() {
-    const { value, translation, type, pinyin, editWord } = this.props;
+    const { value, translation, type, pinyin, editWord,
+            deleteWord } = this.props;
 
     return (
       <li className="word-list-item mb-2 d-flex f3 flex-items-start">
@@ -25,6 +26,11 @@ class WordListItem extends Component {
           onClick={editWord}
           className="btn-link edit-word-button ml-4 mt-2 text-small"
         >Edit</button>
+        <button
+          type="button"
+          onClick={deleteWord}
+          className="btn-link delete-word-button ml-4 mt-2 text-small"
+        >Delete</button>
       </li>
     );
   }
