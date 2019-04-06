@@ -12,7 +12,7 @@ class WordTypeSelect extends Component {
         <label
           htmlFor="type-field"
           className="mr-1"
-        >Word type:</label>
+        >Word or phrase type:</label>
         <select
           id="type-field"
           onChange={this.onChange}
@@ -20,6 +20,8 @@ class WordTypeSelect extends Component {
           className="form-select"
         >
           <option>Choose a type</option>
+          <option value="phrase">phrase</option>
+          <option value="idiom">idiom</option>
           <option value="noun">noun</option>
           <option value="verb">verb</option>
           <option value="adjective">adjective</option>
