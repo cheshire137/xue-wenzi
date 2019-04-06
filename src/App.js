@@ -125,14 +125,12 @@ class App extends Component {
               <h2>{notice}</h2>
             ) : null}
             {words.length > 0 ? (
-              <div>
-                <ExportButton words={words} />
-                <ImportButton
-                  knownWordValues={words.map(word => word.value)}
-                  onImportComplete={this.importedWords}
-                />
-              </div>
+              <ExportButton words={words} />
             ) : null}
+            <ImportButton
+              knownWordValues={words.map(word => word.value)}
+              onImportComplete={this.importedWords}
+            />
           </div>
         </header>
         <main className="container-lg width-full clearfix">
