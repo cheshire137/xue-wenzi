@@ -81,7 +81,7 @@ class WordForm extends Component {
         <div className="form-group mt-0">
           <label
             htmlFor="word-field"
-            className="mb-1 d-block"
+            className="mb-1 d-block no-wrap"
           >Chinese word or phrase:</label>
           <input
             type="text"
@@ -100,7 +100,7 @@ class WordForm extends Component {
         <div className="form-group">
           <label
             htmlFor="pinyin-field"
-            className="mb-1 d-block"
+            className="mb-1 d-block no-wrap"
           >Pinyin:</label>
           <input
             type="text"
@@ -115,7 +115,7 @@ class WordForm extends Component {
         <div className="form-group">
           <label
             htmlFor="translation-field"
-            className="mb-1 d-block"
+            className="mb-1 d-block no-wrap"
           >English translation:</label>
           <input
             type="text"
