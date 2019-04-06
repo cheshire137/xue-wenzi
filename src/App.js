@@ -89,13 +89,13 @@ class App extends Component {
     const wordTypesAndCounts = getWordTypesAndCounts(words);
 
     return (
-      <div>
-        <header className="app-header">
+      <div className="app-wrapper">
+        <header className="app-header mb-3">
           <div className="container-lg">
-            <h1 className="pt-4 pb-2 mb-3">学文字</h1>
+            <h1 className="pt-4 pb-2">学文字</h1>
           </div>
         </header>
-        <div className="container-lg">
+        <main className="container-lg">
           <div className="clearfix">
             <div className="col-2 float-left">
               <div className="mr-6">
@@ -127,7 +127,7 @@ class App extends Component {
               />
             </div>
           </div>
-        </div>
+        </main>
         <footer className="app-footer mt-4">
           <div className="container py-4 f6">
             <a
