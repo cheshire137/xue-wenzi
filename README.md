@@ -4,6 +4,8 @@ This is a little web app I'm writing as I learn Mandarin. Besides
 having handwritten notes, I thought it might be nice/useful to have
 a list of all the Chinese words I've learned.
 
+![Screenshot of app](./screenshot1.png)
+
 ## How to develop
 
 In the project directory, you can run:
