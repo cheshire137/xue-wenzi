@@ -28,7 +28,11 @@ class WordList extends Component {
         {words.length > 0 ? (
           <ul>
             {words.map(word => (
-              <WordListItem {...word} key={word.value} />
+              <WordListItem
+                {...word}
+                key={word.value}
+                editWord={() => this.props.editWord(word)}
+              />
             ))}
           </ul>
         ) : (
