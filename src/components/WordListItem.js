@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import WordType from './WordType';
 import SpeakButton from './SpeakButton';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './WordListItem.css';
 
 class WordListItem extends Component {
@@ -15,9 +16,9 @@ class WordListItem extends Component {
             {value}
             <SpeakButton value={value} />
             {translation ? (
-              <span>
-                &mdash; {translation}
-              </span>
+              <span
+                className="d-inline-block ml-2"
+              >{translation}</span>
             ) : null}
           </div>
           <div>
@@ -25,17 +26,17 @@ class WordListItem extends Component {
             <WordType type={type} />
           </div>
         </div>
-        <div className="f6 show-on-hover ml-4 mt-2">
+        <div className="f6 show-on-hover ml-3 mt-2">
           <button
             type="button"
             onClick={editWord}
             className="btn-link"
-          >Edit</button>
+          ><FontAwesomeIcon icon="pen" /></button>
           <button
             type="button"
             onClick={deleteWord}
-            className="btn-link ml-4"
-          >Delete</button>
+            className="btn-link ml-3"
+          ><FontAwesomeIcon icon="trash" /></button>
         </div>
       </li>
     );

@@ -7,9 +7,11 @@ import WordTypeFilter from './components/WordTypeFilter';
 import ExportButton from './components/ExportButton';
 import ImportButton from './components/ImportButton';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faPlayCircle } from '@fortawesome/free-solid-svg-icons';
+import { faPen, faPlayCircle, faTrash } from '@fortawesome/free-solid-svg-icons';
 
+library.add(faPen);
 library.add(faPlayCircle);
+library.add(faTrash);
 
 function getWordTypesAndCounts(words) {
   const typesAndCounts = {};

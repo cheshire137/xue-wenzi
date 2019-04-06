@@ -43,9 +43,7 @@ class SpeakButton extends Component {
         type="button"
         className="btn-link mx-1 f6 v-align-middle"
         onClick={this.speak}
-      >
-        <FontAwesomeIcon icon="play-circle" />
-      </button>
+      ><FontAwesomeIcon icon="play-circle" /></button>
     );
   }
 }
