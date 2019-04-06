@@ -97,37 +97,33 @@ class App extends Component {
             >学文字</h1>
           </div>
         </header>
-        <main className="container-lg">
-          <div className="clearfix">
-            <div className="col-2 float-left">
-              <div className="mr-6">
-                {words.length > 0 ? (
-                  <WordTypeFilter
-                    activeFilter={wordTypeFilter}
-                    wordTypesAndCounts={wordTypesAndCounts}
-                    filterWordsByType={this.changeWordTypeFilter}
-                  />
-                ) : null}
-              </div>
-            </div>
-            <div className="col-7 float-left">
-              <WordList
-                wordTypeFilter={wordTypeFilter}
-                words={visibleWords}
-                sort={sort}
-                onSortChange={this.onSortChange}
-                editWord={this.editWord}
+        <main className="container-lg width-full clearfix">
+          <div className="col-2 pr-6 float-left">
+            {words.length > 0 ? (
+              <WordTypeFilter
+                activeFilter={wordTypeFilter}
+                wordTypesAndCounts={wordTypesAndCounts}
+                filterWordsByType={this.changeWordTypeFilter}
               />
-            </div>
-            <div className="col-3 float-left">
-              <WordForm
-                onSave={this.onWordSave}
-                pinyin={editingPinyin}
-                translation={editingTranslation}
-                value={editingValue}
-                type={editingType}
-              />
-            </div>
+            ) : null}
+          </div>
+          <div className="col-7 float-left">
+            <WordList
+              wordTypeFilter={wordTypeFilter}
+              words={visibleWords}
+              sort={sort}
+              onSortChange={this.onSortChange}
+              editWord={this.editWord}
+            />
+          </div>
+          <div className="col-3 float-left">
+            <WordForm
+              onSave={this.onWordSave}
+              pinyin={editingPinyin}
+              translation={editingTranslation}
+              value={editingValue}
+              type={editingType}
+            />
           </div>
         </main>
         <footer className="app-footer mt-4">
