@@ -21,8 +21,8 @@ class WordType extends Component {
          type === 'pronoun' ? (
            <span className="text-small text-gray">pro.</span>
          ) :
-         type === 'measure' ? (
-           <span className="text-small text-gray">measure</span>
+         typeof type === 'string' && type.trim().length > 0 ? (
+           <span className="text-small text-gray">{type}</span>
          ) : null}
       </span>
     )
