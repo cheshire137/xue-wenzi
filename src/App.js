@@ -6,6 +6,10 @@ import WordForm from './components/WordForm';
 import WordTypeFilter from './components/WordTypeFilter';
 import ExportButton from './components/ExportButton';
 import ImportButton from './components/ImportButton';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faPlayCircle } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faPlayCircle);
 
 function getWordTypesAndCounts(words) {
   const typesAndCounts = {};
