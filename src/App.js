@@ -110,7 +110,7 @@ class App extends Component {
                 ) : null}
               </div>
             </div>
-            <div className="col-5 float-left">
+            <div className="col-7 float-left">
               <WordList
                 wordTypeFilter={wordTypeFilter}
                 words={visibleWords}
@@ -119,7 +119,7 @@ class App extends Component {
                 editWord={this.editWord}
               />
             </div>
-            <div className="col-4 float-left">
+            <div className="col-3 float-left">
               <WordForm
                 onSave={this.onWordSave}
                 pinyin={editingPinyin}

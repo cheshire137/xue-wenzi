@@ -1,3 +1,8 @@
+.filter-item {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
 .filter-item.selected {
   background-color: #FFF115;
   color: #000;

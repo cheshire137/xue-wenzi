@@ -11,7 +11,7 @@ class WordTypeSelect extends Component {
       <div className="form-group">
         <label
           htmlFor="type-field"
-          className="mr-1"
+          className="mb-1 d-block"
         >Word or phrase type:</label>
         <select
           id="type-field"
