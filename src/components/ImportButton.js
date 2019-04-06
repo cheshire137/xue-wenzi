@@ -10,7 +10,7 @@ class ImportButton extends Component {
 
     for (const wordData of wordList) {
       const word = new ChineseWord(wordData);
-      if (knownWordValues.indexOf(word.value) < 0) {
+      if (knownWordValues.length < 1 || knownWordValues.indexOf(word.value) < 0) {
         newWords.push(word);
       }
       word.save();
