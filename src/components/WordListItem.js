@@ -34,12 +34,12 @@ class WordListItem extends Component {
               <button
                 type="button"
                 onClick={editWord}
-                className="btn-link link-gray-dark"
+                className="btn-link link-gray"
               ><FontAwesomeIcon icon="pen" /></button>
               <button
                 type="button"
                 onClick={deleteWord}
-                className="btn-link link-gray-dark ml-3"
+                className="btn-link link-gray ml-3"
               ><FontAwesomeIcon icon="trash" /></button>
             </div>
           </div>

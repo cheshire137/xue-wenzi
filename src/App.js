@@ -76,8 +76,10 @@ class App extends Component {
   };
 
   deleteWord = word => {
-    word.delete();
-    this.refreshWords();
+    if (window.confirm(`Are you sure you want to delete ${word.value} (${word.translation})?`)) {
+      word.delete();
+      this.refreshWords();
+    }
   };
 
   onWordSave = () => {
