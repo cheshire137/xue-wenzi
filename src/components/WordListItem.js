@@ -14,7 +14,10 @@ class WordListItem extends Component {
         <div>
           <div className="d-flex flex-items-center">
             {value}
-            <SpeakButton value={value} />
+            <SpeakButton
+              value={value}
+              className="btn-link mx-1 f6 v-align-middle"
+            />
             {translation ? (
               <span
                 className="d-inline-block ml-2"

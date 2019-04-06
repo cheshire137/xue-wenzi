@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ChineseWord from '../models/ChineseWord';
 import WordTypeSelect from './WordTypeSelect';
+import SpeakButton from './SpeakButton';
 
 class WordForm extends Component {
   constructor(props) {
@@ -88,17 +89,33 @@ class WordForm extends Component {
             className="mb-1 d-block no-wrap"
           >Chinese word or phrase:</label>
           {showValueField ? (
-            <input
-              type="text"
-              required
-              id="word-field"
-              className="form-control"
-              onChange={this.onValueChange}
-              value={value}
-              placeholder="e.g., 书"
-            />
+            <div className={value.length > 0 ? 'input-group' : ''}>
+              <input
+                type="text"
+                required
+                id="word-field"
+                className="form-control"
+                onChange={this.onValueChange}
+                value={value}
+                placeholder="e.g., 书"
+              />
+              {value.length > 0 ? (
+                <span class="input-group-button">
+                  <SpeakButton
+                    value={value}
+                    className="btn"
+                  />
+                </span>
+              ) : null}
+            </div>
           ) : (
-            <span>{value}</span>
+            <div>
+              <span>{value}</span>
+              <SpeakButton
+                value={value}
+                className="btn-link ml-2"
+              />
+            </div>
           )}
         </div>
         <WordTypeSelect

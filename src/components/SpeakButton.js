@@ -41,7 +41,7 @@ class SpeakButton extends Component {
     return (
       <button
         type="button"
-        className="btn-link mx-1 f6 v-align-middle"
+        className={this.props.className}
         onClick={this.speak}
       ><FontAwesomeIcon icon="play-circle" /></button>
     );
