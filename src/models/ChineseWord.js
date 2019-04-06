@@ -1,9 +1,18 @@
 import Database from './Database';
+
 const wordsKey = 'words';
+const defaultWordMap = {
+  '你好': {
+    value: '你好',
+    pinyin: 'nǐ hǎo',
+    translation: 'hello',
+    type: 'greeting'
+  }
+};
 
 class ChineseWord {
   static findAll(sort) {
-    const wordMap = Database.get(wordsKey) || {};
+    const wordMap = Database.get(wordsKey) || defaultWordMap;
     const wordData = Object.values(wordMap);
 
     const words = wordData.map(data => new ChineseWord(data));
