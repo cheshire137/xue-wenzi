@@ -21,6 +21,13 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
+To deploy on GitHub Pages, first modify [package.json](./package.json) to
+change the `homepage` field based on your GitHub URL, then:
+
+```bash
+yarn run deploy
+```
+
 ### `yarn test`
 
 Launches the test runner in the interactive watch mode.<br>
